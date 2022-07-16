@@ -1,38 +1,120 @@
-.App {
-  text-align: center;
+:root{
+    ---clr-white:#fff;
+    ---clr-black:#000;
+    ---clr-grey:#c6c4c4;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.parking-slots-container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.parking-slots{
+    border: 1px solid var(---clr-black);
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: var(---clr-white);
+    width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.parking-slots-clicked{
+    border: 1px solid var(---clr-black);
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: var(---clr-grey);
+    width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.booked-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 10px 10px 10px 0px;
+}
+
+.booked-box{
+    background-color: var(---clr-grey);
+    padding: 10px;
+    border: 1px solid var(---clr-black);
+    border-radius: 5px;
+    margin: 0px 5px 0px 0px;
+}
+
+.available-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 10px 10px 10px 0px;
+}
+
+.available-box {
+    background-color: var(---clr-white);
+    padding: 10px;
+    border: 1px solid var(---clr-black);
+    border-radius: 5px;
+    margin: 0px 5px 0px 0px;
+}
+
+.instructions-container{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.instructions-container:hover{
+    text-decoration: none;
+}
+
+.allocated-slots{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.allocated-slots-container{
+    margin: 50px 0px 50px 0px ;
+}
+
+.heading-container h2{
+    border-top: 2px solid var(---clr-black) ;
+    border-bottom: 2px solid var(---clr-black);
+    padding: 10px 0px 10px 0px ;
+}
+
+.add-slots-container{
+    margin: 0px 0px 0px 20px;
 }
