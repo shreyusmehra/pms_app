@@ -11,34 +11,39 @@ const ParkingSlots = () => {
   };
 
   return (
-    <div className="parking-slots-container">
-      {parkingSlots.map((slot) => {
-        const { id, title } = slot;
-        return (
-          <motion.article
-            key={id}
+    <div className="parking-container">
+      <div className="parking-slots-container">
+        {parkingSlots.map((slot) => {
+          const { id, title } = slot;
+          return (
+            <motion.article
+              className="parking-slot"
+              key={id}
+              initial="hidden"
+              animate="visible"
+              variants={variants}
+              transition={{ ease: "easeIn", duration: 1, delay: 1 }}
+            >
+              <ParkingSlot id={id} title={title} />
+            </motion.article>
+          );
+        })}
+      </div>
+      <div>
+        {displayedSlots < 100 && (
+          <motion.div
+            className="add-slots-container"
             initial="hidden"
             animate="visible"
             variants={variants}
-            transition={{ ease: "easeIn", duration: 1, delay: 1 }}
+            transition={{ ease: "easeIn", duration: 1, delay: 2 }}
           >
-            <ParkingSlot id={id} title={title} />
-          </motion.article>
-        );
-      })}
-      {displayedSlots < 100 && (
-        <motion.div
-          className="add-slots-container"
-          initial="hidden"
-          animate="visible"
-          variants={variants}
-          transition={{ ease: "easeIn", duration: 1, delay: 2 }}
-        >
-          <Button variant="outlined" onClick={AddParkingSlots}>
-            + Add 10 more Slots
-          </Button>
-        </motion.div>
-      )}
+            <Button variant="outlined" onClick={AddParkingSlots}>
+              + Add 10 more Slots
+            </Button>
+          </motion.div>
+        )}
+      </div>
     </div>
   );
 };
